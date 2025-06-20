@@ -1,17 +1,1 @@
--- Infinite Jump Script
--- Put this in StarterPlayer > StarterPlayerScripts
 
-local UserInputService = game:GetService("UserInputService")
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
-local infiniteJumpEnabled = true
-
-UserInputService.JumpRequest:Connect(function()
-    if infiniteJumpEnabled then
-        if humanoid then
-            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-        end
-    end
-end)
